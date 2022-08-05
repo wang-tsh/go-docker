@@ -1,0 +1,7 @@
+app:
+  contextPath: /manager
+log:
+  logPath: ./Logs
+  logFileName: log
+  maxAge: time.Hour*24*7
+  rotationTime: time.Hour*24
