@@ -11,9 +11,9 @@ func (AccessSystem) TableName() string {
 type AccessSystem struct {
 	entity.Base
 	ID           int32  `json:"id"           gorm:"primaryKey;column:ID"`
-	SystemName   string `json:"systemName"   gorm:"systemName"`
-	SystemCode   string `json:"systemCode"   gorm:"systemCode"`
-	Introduction string `json:"introduction" gorm:"introduction"`
-	NetType      int32  `json:"netType"      gorm:"netType"`
-	OrgCode      string `json:"orgCode"      gorm:"orgCode"`
+	SystemName   string `json:"systemName"   gorm:"column:SYSTEM_NAME"`
+	SystemCode   string `json:"systemCode"   gorm:"column:SYSTEM_CODE"`
+	Introduction string `json:"introduction" gorm:"column:INTRODUCTION"`
+	NetType      int    `json:"netType"      gorm:"column:NET_TYPE"`
+	OrgCode      string `json:"orgCode"      gorm:"column:ORG_CODE"`
 }

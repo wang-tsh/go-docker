@@ -12,14 +12,23 @@ import (
 func GetSystems(c *gin.Context) {
 
 	log.Infoln("to get system")
-	var AccessSystem accessSystem.AccessSystem
+	var AccessSystems []accessSystem.AccessSystem
 	id := c.Query("id")
-	db.DB.Find(&AccessSystem, id)
+	var err error
+	if "" != id {
+		err = db.DB.Find(&AccessSystems, id).Error
+	} else {
+		err = db.DB.Find(&AccessSystems).Error
+
+	}
+	if err != nil {
+		log.Errorf("db has error %v", err.Error())
+	}
 
 	resultVo := vo.BaseResultVo{
 		Code:    http.StatusOK,
 		Message: "OK",
-		Data:    AccessSystem,
+		Data:    AccessSystems,
 	}
 	c.JSON(http.StatusOK, resultVo)
 }

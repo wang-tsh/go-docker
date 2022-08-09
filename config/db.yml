@@ -1,1 +1,4 @@
-dsn: dm://DATAEXCHANGE:DATAEXCHANGE@10.170.252.156:5236?ignoreCase=false&appName=wisdom&statEnable=false
+#dsn: dm://DATAEXCHANGE:DATAEXCHANGE@10.170.252.156:5236?ignoreCase=false&appName=wisdom&statEnable=false
+dsn: "root:wts123456@tcp(127.0.0.1:3306)/go-docker?charset=utf8mb4&parseTime=True&loc=Local"
+
+type: mysql
