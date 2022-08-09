@@ -2,7 +2,11 @@ package system
 
 import "go-docker/db/entity"
 
-var TableName = "DE_ACCESS_SYSTEM"
+var tableName = "DE_ACCESS_SYSTEM"
+
+func (AccessSystem) TableName() string {
+	return tableName
+}
 
 type AccessSystem struct {
 	entity.Base

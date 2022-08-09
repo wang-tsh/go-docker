@@ -14,10 +14,10 @@ func GetSystems(c *gin.Context) {
 	log.Infoln("to get system")
 	var AccessSystem accessSystem.AccessSystem
 	id := c.Query("id")
-	db.DB.Table(accessSystem.TableName).Find(&AccessSystem, id)
+	db.DB.Find(&AccessSystem, id)
 
 	resultVo := vo.BaseResultVo{
-		Code:    200,
+		Code:    http.StatusOK,
 		Message: "OK",
 		Data:    AccessSystem,
 	}
